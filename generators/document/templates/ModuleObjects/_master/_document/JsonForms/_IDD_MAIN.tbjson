@@ -1,0 +1,51 @@
+﻿{
+  "id": "IDD_TD_<%= documentName.toUpperCase() %>_MAIN",
+  "type": "Tile",
+  "name": "MainData",
+  "text": "<%= documentTitle %>",
+  "child": true,
+  "items": [
+  <% if (defaultUI) { -%>
+    {
+      "id": "IDC_<%= documentName.toUpperCase() %>_CODE",
+      "type": "Edit",
+      "controlClass": "StringEdit",
+      "controlCaption": "Code",
+      "anchor": "COL1",
+      "captionSize": 3,
+      "controlSize": 2,
+      "binding": {
+        "datasource": "<%= documentName %>.Code"
+      },
+      "tabStop": true,
+      "width": 48,
+      "height": 12,
+      "autoHScroll": true,
+      "rows": 1,
+      "multiline": false
+    },
+    {
+      "id": "IDC_<%= documentName.toUpperCase() %>_DESCRI",
+      "type": "Edit",
+      "controlClass": "StringEdit",
+      "controlCaption": "Description",
+      "anchor": "COL1",
+      "captionSize": 3,
+      "controlSize": 6,
+      "binding": {
+        "datasource": "<%= documentName %>.Description"
+      },
+      "tabStop": true,
+      "width": 154,
+      "height": 36,
+      "autoVScroll": true,
+      "rows": 3,
+      "multiline": true,
+      "wantReturn": true
+    }
+  <% } -%>
+  ],
+  "hasStaticArea": true,
+  "width": 654,
+  "height": 73
+}

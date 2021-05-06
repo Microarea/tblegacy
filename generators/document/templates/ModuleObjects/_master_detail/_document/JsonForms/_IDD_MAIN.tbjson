@@ -1,0 +1,46 @@
+﻿{
+  "id": "IDD_TD_<%= documentName.toUpperCase() %>_MAIN",
+  "type": "Tile",
+  "name": "MainData",
+  "text": "<%= documentTitle %>",
+  "items": [
+  <% if (defaultUI) { -%>
+    {
+      "id": "IDC_<%= documentName.toUpperCase() %>_DOCNO",
+      "type": "Edit",
+      "controlClass": "StringEdit",
+      "controlCaption": "Document No.",
+      "anchor": "COL1",
+      "captionSize": 3,
+      "controlSize": 4,
+      "binding": {
+        "datasource": "<%= documentName %>.DocNo"
+      },
+      "tabStop": true,
+      "width": 57,
+      "height": 12,
+      "autoHScroll": true,
+      "rows": 1,
+      "multiline": false
+    },
+    {
+      "id": "IDC_<%= documentName.toUpperCase() %>_DOCDATE",
+      "type": "Edit",
+      "controlClass": "DateEdit",
+      "controlCaption": "Document Date",
+      "anchor": "COL1",
+      "captionSize": 3,
+      "controlSize": 3,
+      "binding": {
+        "datasource": "<%= documentName %>.DocDate"
+      },
+      "width": 57,
+      "height": 12,
+      "autoHScroll": true
+    }
+  <% } -%>
+  ],
+  "hasStaticArea": true,
+  "height": 73,
+  "width": 654
+}

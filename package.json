@@ -1,0 +1,32 @@
+{
+  "main": "generators/app/index.js",
+  "name": "generator-tblegacy",
+  "version": "0.1.0",
+  "description": "yeoman generator for a TB legacy app",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "andrea-rinaldi-microarea",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.0.1",
+    "ejs": "^2.6.1",
+    "eslint": "^4.11.0",
+    "jshint": "^2.9.5",
+    "lodash": "^4.17.4",
+    "parse-key-value": "^1.0.0",
+    "prettify-xml": "^1.2.0",
+    "sql-formatter": "^2.3.3",
+    "uuid": "^3.1.0",
+    "yeoman-environment": "^2.3.4",
+    "yeoman-generator": "^1.1.1",
+    "yeoman-option-or-prompt": "^2.0.0"
+  },
+  "bin": {
+    "tbl-cli": "tbl-cli.js",
+    "tbl": "tbl-cli.js"
+  }
+}

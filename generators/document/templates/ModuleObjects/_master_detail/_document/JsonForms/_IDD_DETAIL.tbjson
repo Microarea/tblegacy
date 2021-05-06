@@ -1,0 +1,48 @@
+﻿{
+  "id": "IDD_TD_<%= documentName.toUpperCase() %>_DETAIL",
+  "type": "Tile",
+  "name": "Detail",
+  "text": "Detail",
+  "size": "AutoFill",
+  "items": [
+    {
+      "id": "IDC_<%= documentName.toUpperCase() %>_DETAIL",
+      "type": "BodyEdit",
+      "name": "Detail",
+      "text": "Detail",
+      "binding": {
+        "datasource": "<%= documentName %>Details"
+      },
+      "items": [
+      <% if (defaultUI) { -%>
+        {
+          "id": "IDC_<%= documentName.toUpperCase() %>_DETAIL_CODE",
+          "type": "ColTitle",
+          "controlClass": "StringEdit",
+          "name": "Code",
+          "text": "Code",
+          "binding": {
+            "datasource": "Code"
+          }
+        },
+        {
+          "id": "IDC_<%= documentName.toUpperCase() %>_DETAIL_DESCRI",
+          "type": "ColTitle",
+          "controlClass": "StringEdit",
+          "name": "Description",
+          "text": "Description",
+          "binding": {
+            "datasource": "Description"
+          }
+        }
+      <% } -%>
+      ],
+      "width": 654,
+      "height": 171,
+      "clipChildren": true,
+      "ownerDraw": true
+    }
+  ],
+  "height": 172,
+  "width": 654
+}
