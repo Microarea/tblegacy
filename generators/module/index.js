@@ -72,7 +72,7 @@ module.exports = class extends Generator {
         }
 
     }
-    
+
     initializing() {
         if (typeof this.options.sourceRoot !== "undefined" && this.options.sourceRoot !== "")
             this.sourceRoot(this.options.sourceRoot);
@@ -93,9 +93,9 @@ module.exports = class extends Generator {
     prompting() {
         if (!this.options.asSubgenerator) {
             this.log('Welcome to the ' + chalk.red('TBLegacy Module') + ' generator!');
-            this.log('You are about to add a module to the ' + chalk.bold(this.options.appName) + ' application.' )
+            this.log('You are about to add a module to the ' + chalk.bold(this.options.appName) + ' application.')
         }
-        const prompts = [ {
+        const prompts = [{
             name: 'moduleName',
             message: 'What is your module name ?',
             default: this.options.moduleName,
@@ -103,8 +103,8 @@ module.exports = class extends Generator {
         }, {
             name: 'moduleDescription',
             message: 'Description of the module',
-            default: (answers) => { 
-                return this.options.moduleDescription ? this.options.moduleDescription : answers.moduleName + ' module'; 
+            default: (answers) => {
+                return this.options.moduleDescription ? this.options.moduleDescription : answers.moduleName + ' module';
             }
         }, {
             name: 'shortName',
@@ -132,8 +132,14 @@ module.exports = class extends Generator {
 
         this.fs.copy(
             this.appPath('Solutions\\' + this.properties.appName + '.Solution.xml'),
-            this.appPath('Solutions\\' + this.properties.appName + '.Solution.xml'),
-            { process: (contents) => { return this.addSolutionXml(contents); } }
+            this.appPath('Solutions\\' + this.properties.appName + '.Solution.xml'), { process: (contents) => { return this.addSolutionXml(contents); } }
+        );
+
+        // Fragments
+        this.fs.copyTpl(
+            this.templatePath('Fragments\\_fragments.xml'),
+            this.appPath('Fragments\\' + this.properties.moduleName + '.xml'),
+            this.properties
         );
 
         // module config

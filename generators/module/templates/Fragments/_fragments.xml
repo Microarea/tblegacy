@@ -1,0 +1,8 @@
+<Applications localize="<%= moduleName %>" configurable="true">
+  <Application container="Applications" name="<%= appName %>">
+    <Incompatibilities />
+    <Module name="<%= moduleName %>">
+		<Allow iso="IT,GB,RO,BG,HU,ES" />
+    </Module>
+  </Application>
+</Applications>
