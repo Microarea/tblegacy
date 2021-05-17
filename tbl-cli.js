@@ -80,18 +80,17 @@ if (args[0] === 'new' || args[0] === 'n') {
     tpl = tpl + '\\enum\\templates';
 } else if (args[0] === 'dbt' || args[0] === 'b') {
     gen = 'tbl:dbt';
-    tpl = tpl + '\\enum\\templates';
+    tpl = tpl + '\\dbt\\templates';
 } else {
     return usage(args);
 }
-var params = args.slice(1).toString().replace(',',' ');
+var params = args.slice(1).toString().replace(',', ' ');
 try {
     env.run(gen + ' ' + params, { 'sourceRoot': tpl, 'force': true }, (err) => {
         if (err) {
             console.log(err.message);
         }
     });
-} catch(err) {
+} catch (err) {
     console.log(err);
 }
-
