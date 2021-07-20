@@ -84,12 +84,14 @@ if (args[0] === 'new' || args[0] === 'n') {
 } else {
     return usage(args);
 }
+
 var params = args.slice(1).toString().replace(',', ' ');
+
 try {
-    env.run(gen + ' ' + params, { 'sourceRoot': tpl, 'force': true }, (err) => {
-        if (err) {
-            console.log(err.message);
-        }
+    env.run(gen + ' ' + params, { 'sourceRoot': tpl, 'force': true }).then(() => {
+        console.log('success')
+    }, err => {
+        console.log(`error ${error}`);
     });
 } catch (err) {
     console.log(err);
